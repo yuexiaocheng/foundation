@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <math.h>
 #include <string.h>
+#include <assert.h>
 
 /* generate a prime number near by n */
 int next_prime(int n) {
@@ -29,7 +30,7 @@ int next_prime(int n) {
 /* the hash function */
 unsigned int hash(const char* key, int tablesize) {
 	unsigned int hashval = 0;
-	if (NULL == key) return -1;
+	assert(key != NULL);
 	while ('\0' != *key) 
 		hashval = (hashval << 5) + *key++;
 	return hashval % tablesize;

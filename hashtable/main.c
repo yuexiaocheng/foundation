@@ -24,5 +24,8 @@ int main() {
 			printf("Insert[%s]=%s ok.\n", node->key, node->value);
 	}
 	PrintTable(tbl);
+	sprintf(keyx, "%s%d", key, 58);
+	Remove(tbl, keyx);
+	PrintTable(tbl);
 	return 0;
 }
